@@ -18,10 +18,10 @@ export class DownloadComponent implements OnInit {
   columns = [
     { prop: 'name'},
     { name: 'Size'},
+    { name: 'Hash'},
     { name: 'Year'},
     { name: 'Month'},
-    { name: 'Day'},
-    { name: 'ETag'}
+    { name: 'Day'}
   ];
 
   constructor(private authService: AuthService,
@@ -47,7 +47,7 @@ export class DownloadComponent implements OnInit {
            row.month = MonthUtil.getName(data.LastModified.getUTCMonth());
            row.day = data.LastModified.getUTCDate();
            row.size = FileSizeUtil.transform(data.Size);
-           row.ETag = data.ETag;
+           row.hash = data.ETag;
            return row;
         })
         }).catch((error) => {
