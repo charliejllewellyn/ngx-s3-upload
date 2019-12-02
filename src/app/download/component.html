@@ -6,7 +6,7 @@
         <ngx-datatable class="material" [rowHeight]=35 [columnMode]="'flex'" [rows]="rows">
             <ngx-datatable-column name="Name" [flexGrow]="3">
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                    <a target="_blank" href="{{row.url}}">{{row}}</a>
+                    <a target="_blank" href="{{row.url}}">{{row.key}}</a>
                 </ng-template>
             </ngx-datatable-column>
             <ngx-datatable-column name="Size" [flexGrow]="1">
@@ -14,7 +14,7 @@
                     {{value}}
                 </ng-template>
             </ngx-datatable-column>
-            <ngx-datatable-column name="Hash" [flexGrow]="1">
+            <ngx-datatable-column name="Hash" [flexGrow]="3">
                 <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
                     {{value}}
                 </ng-template>
