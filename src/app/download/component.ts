@@ -20,7 +20,8 @@ export class DownloadComponent implements OnInit {
     { name: 'Size'},
     { name: 'Year'},
     { name: 'Month'},
-    { name: 'Day'}
+    { name: 'Day'},
+    { name: 'ETag'}
   ];
 
   constructor(private authService: AuthService,
@@ -46,6 +47,7 @@ export class DownloadComponent implements OnInit {
            row.month = MonthUtil.getName(data.LastModified.getUTCMonth());
            row.day = data.LastModified.getUTCDate();
            row.size = FileSizeUtil.transform(data.Size);
+           row.ETag = data.ETag;
            return row;
         })
         }).catch((error) => {
